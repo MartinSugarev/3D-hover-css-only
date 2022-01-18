@@ -1,0 +1,92 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+.container{
+    height: 500px;
+    width: 500px;
+    position: relative;
+   
+}
+.box-wrapper{
+   height: 300px;
+   width: 300px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotateY(0deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+    perspective: 200px;
+    transition: all 0.6s ease;
+}
+
+
+
+.box1, .box2, .box3 {
+    height: 60%;
+    width: 60%;
+    position: absolute;
+    border: 1px;
+    border-style: groove;
+    border-color: red;
+    cursor: pointer;
+    transform: rotateY(0deg);
+}
+.box1{
+    top: 30%;
+    z-index: 3;
+    background-color: blue;
+    
+}
+
+.box2{
+    top: 22%;
+    z-index: 2;
+    background-color: aqua;
+    transform: translateZ(-30px);
+}
+.box3{
+    top: 14%;
+    z-index: 1;
+    background-color: chartreuse;
+    transform: translateZ(-60px);
+}
+.span1{
+    position: absolute;
+    left: 30%;
+    width: 20%;
+    height: 40%;
+    top: 35%;
+    z-index: 5;
+ 
+}
+.span2{
+    position: absolute;
+    right: 30%;
+    width: 20%;
+    height: 40%;
+    top: 35%;
+    z-index: 5;
+  
+}
+
+.span2:hover ~ .box-wrapper{
+    transform: translate(-50%, -50%) rotateY(-70deg);
+}
+.span1:hover ~ .box-wrapper{
+    transform: translate(-50%, -50%) rotateY(70deg);
+}
+
